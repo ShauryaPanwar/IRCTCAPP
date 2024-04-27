@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <h2>
+        <a href="/users/login">Log Out</a>
+    </h2>
+    <form action="/users/dashboard" method="GET">
+        <input type="text" name="source" placeholder="Source" required>
+        <input type="text" name="destination" placeholder="Destination" required>
+        <button type="submit">Search Trains</button>
+    </form>
+    <h2>Available Trains</h2>
+    <table border="1" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Train Name</th>
+                <th>Train Number</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Book Ticket</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
+<script type="text/javascript">
+    let source = new URLSearchParams(window.location.search).get('source');
+    let destination = new URLSearchParams(window.location.search).get('destination');
+    let urlPattern = `/trains/search?source=${source}&destination=${destination}`;
+    fetch(urlPattern, { method: 'GET' })
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.querySelector('tbody');
+            if(data.trains.length === 0) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td colspan="9">No trains available</td>`;
+                tbody.appendChild(tr);
+                return ;
+            }   
+            data.trains.forEach(train => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${train.trainname}</td>
+                    <td>${train.trainno}</td>
+                    <td>${train.source}</td>
+                    <td>${train.destination}</td>
+                    <td>${train.arrival}</td>
+                    <td>${train.departure}</td>
+                    <td>${train.duration}</td>
+                    <td>${train.price}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+</script>
