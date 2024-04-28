@@ -81,5 +81,17 @@ Above is the setup for Db used inside config folder in file develpoment.env to s
 - [@ShauryaPanwar](https://github.com/ShauryaPanwar)
 
 
+##Features 
+
+- Register and Login for User and Admin Roles
+- Admin Role need special code "admin123"
+- Server runs on localhost:4000
+- Navigate to LoginPage then go to Register If firsttime User else enter your credentials
+- if Admin Enter Admin Credentials
+- Once In user Dashboard one can search for trains using train search book tickets right there.
+- Receiving a PNR Number which we can later enter back into check PNR Detail page on Login Page to get PNR Details.
+- If In admin DashBoard one can Add trains avialable.
+
+
 
 
