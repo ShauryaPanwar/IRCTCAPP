@@ -30,19 +30,13 @@ CREATE TABLE bookings (
 
 
 
-# Darkend Trail
-
-Above project is an train booking website made with NodeJs and PostGres.
-
-
-
 
 ## Screenshots
 
-![App Screenshot](![image](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/7845d6a9-d55f-45b1-8d2f-1eba22dbc18a))
+![Image](![image](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/7845d6a9-d55f-45b1-8d2f-1eba22dbc18a))
 
 
-![App Screenshot]([https://i.ibb.co/4WKNXkT/affair.png](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/4ab6af12-6a7f-4df4-8443-2ce679498964))
+![Image]([https://i.ibb.co/4WKNXkT/affair.png](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/4ab6af12-6a7f-4df4-8443-2ce679498964))
 
 
 
