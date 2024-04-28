@@ -29,15 +29,10 @@ CREATE TABLE bookings (
 );
 
 
+## Table ERD
 
 
-## Screenshots
-
-![Image](![image](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/7845d6a9-d55f-45b1-8d2f-1eba22dbc18a))
-
-
-![Image]([https://i.ibb.co/4WKNXkT/affair.png](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/4ab6af12-6a7f-4df4-8443-2ce679498964))
-
+![image](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/51095018-9e4b-47a0-a4d5-071dc493507c)
 
 
 ## Deployment
@@ -47,12 +42,9 @@ To deploy this project run
 ```bash
   npm run dev
 ```
-https://valhein-shaurya.onrender.com
 
 
 ## Documentation
-
-[Documentation](https://linktodocumentation)
 
 To run the project one have to install following dependencies: 
 - Node Js
@@ -77,7 +69,8 @@ Build command is
     
 ##DB Setup
 
-![App Screenshot](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/e66dc921-b2a0-471a-aff5-3d66911fba4d)
+![image](https://github.com/ShauryaPanwar/IRCTCAPP/assets/74058434/05387fa3-8e36-43c3-902a-5dddccfbb3ea)
+
 
 
 Above is the setup for Db used inside config folder in file develpoment.env to set environment variables.
