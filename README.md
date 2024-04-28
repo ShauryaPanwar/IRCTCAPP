@@ -90,7 +90,7 @@ Above is the setup for Db used inside config folder in file develpoment.env to s
 - if Admin Enter Admin Credentials
 - Once In user Dashboard one can search for trains using train search book tickets right there.
 - Receiving a PNR Number which we can later enter back into check PNR Detail page on Login Page to get PNR Details.
-- If In admin DashBoard one can Add trains avialable.
+- If In admin DashBoard one can Add trains avialable and see already added trains.
 
 
 
