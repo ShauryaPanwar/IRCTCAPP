@@ -11,8 +11,17 @@
         <a href="/users/login">Log Out</a>
     </h2>
     <form action="/users/dashboard" method="GET">
-        <input type="text" name="source" placeholder="Source" required>
-        <input type="text" name="destination" placeholder="Destination" required>
+        <label for="source">Source</label>
+        <select name="source" id="source" required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+        <label for="destination">Destination</label>
+        <select name="destination" id="destination" required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+        <input type="hidden" name="username" required value="<%= user %>">
         <button type="submit">Search Trains</button>
     </form>
     <h2>Available Trains</h2>
@@ -27,7 +36,8 @@
                 <th>Departure Time</th>
                 <th>Duration</th>
                 <th>Price</th>
-                <th>Book Ticket</th>
+                <th>Available</th>
+                <th width="20">Book</th>
             </tr>
         </thead>
         <tbody>
@@ -60,6 +70,8 @@
                     <td>${train.departure}</td>
                     <td>${train.duration}</td>
                     <td>${train.price}</td>
+                    <td>${train.available}</td>
+                    <td><form action='/trains/book' method='post'><input type='hidden' name='trainno' value='${train.trainno}'><input type='hidden' name='ticketnumber' value='${train.available}'><input type='hidden' name='username' value='<%=user%>'><input type='submit' value='Book Ticket'></form></td>
                 `;
                 tbody.appendChild(tr);
             });

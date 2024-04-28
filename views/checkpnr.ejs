@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Details</title>
+</head>
+<body>
+    <h1>Check Details</h1>
+    <a href="/users/login">Login</a>
+    <br>
+    <form action="/users/checkpnr" method="GET">
+        <input type="text" name="pnr" placeholder="PNR" required>
+        <button type="submit" >Submit</button>
+    </form>
+    <table border="1" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Train Number</th>
+                <th>Date Created</th>
+                <th>Booked Seat</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
+<script type="text/javascript">
+    let pnr = new URLSearchParams(window.location.search).get('pnr');
+    let urlPattern = `/pnrdetails?pnr=${pnr}`;
+    fetch(urlPattern, { method: 'GET' })
+        .then(response => response.json())
+        .then(data => {
+            const tbody = document.querySelector('tbody');
+            data.details.forEach(detail => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${detail.user_id}</td>
+                    <td>${detail.train_id}</td>
+                    <td>${detail.datecreated}</td>
+                    <td>C${detail.booked_seats}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+</script>
